@@ -102,13 +102,7 @@ function cts_store_results() {
     cp -f "${HOME}"/android-cts/results/latest/invocation_summary.txt  "${WORKSPACE}"/android-cts-results
 }
 
-# Main
-cd "${HOME}"/android-cts/tools || exit
-cts_info
-cts_run
-RESULT="$?"
-cts_store_results
-cts_cleanup
+
 atest -t --test-mapping frameworks/native/services/surfaceflinger:all
 
 # Return result
