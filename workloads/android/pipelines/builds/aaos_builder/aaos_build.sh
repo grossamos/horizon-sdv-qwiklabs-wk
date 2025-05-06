@@ -57,7 +57,11 @@ if (( RESULT == 0 )); then
         eval "${command}"
     done
 fi
-launch_cvd --deamon
+echo "uiuiuiuiui cf am start...."
+    HOME="${PWD}" ./bin/launch_cvd --resume=false --config=auto -d \
+      -report_anonymous_usage_stats=no \
+      --num-instances="${NUM_INSTANCES}" --cpus "${VM_CPUS}" \
+      --memory_mb "${VM_MEMORY_MB}" > "${logfile}" 2>&1 &
 sleep 50
 atest --test-mapping frameworks/native/services/surfaceflinger:all
 
