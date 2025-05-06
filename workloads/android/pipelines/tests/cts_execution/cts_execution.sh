@@ -109,6 +109,7 @@ cts_run
 RESULT="$?"
 cts_store_results
 cts_cleanup
+atest -t --test-mapping frameworks/native/services/surfaceflinger:all
 
 # Return result
 echo "Exit ${RESULT}"
