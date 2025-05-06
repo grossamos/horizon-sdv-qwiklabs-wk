@@ -58,10 +58,9 @@ if (( RESULT == 0 )); then
     done
 fi
 echo "uiuiuiuiui cf am start...."
-    HOME="${PWD}" ./bin/launch_cvd --resume=false --config=auto -d \
-      -report_anonymous_usage_stats=no \
-      --num-instances="${NUM_INSTANCES}" --cpus "${VM_CPUS}" \
-      --memory_mb "${VM_MEMORY_MB}" > "${logfile}" 2>&1 &
+launch_cvd --resume=false --config=auto -d \
+  -report_anonymous_usage_stats=no \ --cpus "4" \
+  --memory_mb "8000"
 sleep 50
 atest --test-mapping frameworks/native/services/surfaceflinger:all
 
