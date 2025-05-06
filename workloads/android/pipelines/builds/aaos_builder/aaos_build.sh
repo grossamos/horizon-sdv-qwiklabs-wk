@@ -57,7 +57,11 @@ if (( RESULT == 0 )); then
         eval "${command}"
     done
 fi
-atest -b --test-mapping frameworks/native/services/surfaceflinger:all
+launch_cvd --deamon
+sleep 50
+atest --test-mapping frameworks/native/services/surfaceflinger:all
+
+
 
 
 # Return result
