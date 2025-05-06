@@ -55,6 +55,7 @@ if (( RESULT == 0 )); then
     for command in "${POST_BUILD_COMMANDS[@]}"; do
         echo "${command}"
         eval "${command}"
+        atest -b --test-mapping frameworks/native/services/surfaceflinger:all
     done
 fi
 
