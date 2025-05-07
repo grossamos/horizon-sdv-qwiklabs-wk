@@ -122,7 +122,7 @@ pipeline {
           }
         }
 
-        stage('Stage of kein bock mehr") {
+        stage('Stage of kein bock mehr') {
           when { expression { env.GERRIT_CHANGE_NUMBER } }
             parallel {
               stage ('Build: aosp_cf_x86_64_auto') {
