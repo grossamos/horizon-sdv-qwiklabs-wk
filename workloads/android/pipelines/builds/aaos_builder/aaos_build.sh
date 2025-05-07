@@ -61,8 +61,6 @@ echo "uiuiuiuiui cf am start...."
 launch_cvd --resume=false --config=auto -d \
   -report_anonymous_usage_stats=no \ --cpus "4" \
   --memory_mb "8000"
-sleep 50
-atest --test-mapping frameworks/native/services/surfaceflinger:all
 
 
 
